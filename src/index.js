@@ -22,12 +22,11 @@ refs.themeSwitchToggle.checked = localTheme === Theme.DARK;
 
 refs.themeSwitchToggle.addEventListener('change', onThemeSwitch);
 
-function onThemeSwitch() {
+function onThemeSwitch(e) {
   refs.body.classList.toggle(Theme.LIGHT);
   refs.body.classList.toggle(Theme.DARK);
-  refs.themeSwitchToggle.toggle;
   localStorage.setItem(
     'theme',
-    refs.themeSwitchToggle.checked ? Theme.DARK : Theme.LIGHT,
+    e.currentTarget.checked ? Theme.DARK : Theme.LIGHT,
   );
 }
